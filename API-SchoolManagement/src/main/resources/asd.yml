@@ -1,0 +1,18 @@
+spring:
+    application:
+        name: first-service
+    rabbitmq:
+        addresses: amqps://mpnwjjxb:RSP9zx_XcnvUd9WIk8_QUgvxeUxVu6JS@toad.rmq.cloudamqp.com/mpnwjjxb
+        exchange: Greetings  
+server:
+    port: 
+        8081
+eureka:
+    instance:
+        hostname: localhost
+        port: 9000
+    client:
+        registerWithEureka: false
+        fetchRegistry: false
+        serviceUrl: 
+            defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka

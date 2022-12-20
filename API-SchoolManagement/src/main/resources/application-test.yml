@@ -1,0 +1,35 @@
+spring:
+  application:
+        name: first-service
+  rabbitmq:
+        addresses: amqps://mpnwjjxb:RSP9zx_XcnvUd9WIk8_QUgvxeUxVu6JS@toad.rmq.cloudamqp.com/mpnwjjxb
+        exchange: Greetings
+  datasource:
+    url: jdbc:postgresql://ec2-44-205-63-142.compute-1.amazonaws.com:5432/d6qaa8c564aghi
+    username: gikxkqhvkilabd
+    password: b99cb0522108e10e175862aaad0ee91ae7ee7753bb3542961171ec4987a1cca9
+    driver-class-name:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+      
+server:
+    port: 
+        8081
+eureka:
+    instance:
+        hostname: localhost
+        port: 9000
+    client:
+        registerWithEureka: false
+        fetchRegistry: false
+        serviceUrl: 
+            defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka
